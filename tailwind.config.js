@@ -7,7 +7,7 @@ export default {
         Lato: ["Lato", "sans-serif"],
       },
       colors: {
-        customViolet: "#caadff",
+        customOrange: "#D14305",
         whiteLight: "#e5e6e7",
       },
     },
