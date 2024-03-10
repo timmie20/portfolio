@@ -2,18 +2,20 @@ import React from "react";
 import { useTypewriter } from "react-simple-typewriter";
 import arrowDown from "../assets/arrow-down.svg";
 import { Link } from "react-router-dom";
+import ProjectPreview from "../components/ProjectPreview";
+import { data } from "../projectData";
 
 const Home = () => {
   const [text] = useTypewriter({
     words: ["Web", "React", "WebFlow"],
-    loop: {},
+    loop: 1,
     typeSpeed: 150,
     deleteSpeed: 100,
   });
   return (
     <>
-      <div className="container mx-auto p-4">
-        <section className="flex h-[100dvh] flex-col items-center justify-center gap-6 md:gap-0">
+      <div className="">
+        <section className="container mx-auto mb-72 flex h-[100dvh] flex-col items-center justify-center gap-6 p-4 md:gap-0">
           <div className="flex gap-10">
             <Link to="/about" className="link_text">
               About
@@ -30,7 +32,7 @@ const Home = () => {
           </div>
           <div className="mt-7 flex flex-col items-center gap-3 text-wrap text-center">
             <h1 className="text-3xl md:text-[36px]">
-              <span className="text-customOrange font-semibold">{text} </span>
+              <span className="font-semibold text-customOrange">{text} </span>
               Developer
             </h1>
             <h2 className="text-2xl opacity-50 md:text-[28px]">
@@ -39,6 +41,14 @@ const Home = () => {
             <h3 className="text-lg md:text-[22px]">
               I build websites that are fast, accessible, and user-friendly.
             </h3>
+          </div>
+        </section>
+
+        <section className="h-[1380px] bg-customOrange">
+          <div className="relative bottom-28 flex flex-col gap-16">
+            {data.map((project) => (
+              <ProjectPreview project={project} key={project.id} />
+            ))}
           </div>
         </section>
       </div>
