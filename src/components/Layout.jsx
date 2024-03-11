@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
+import DynamicIsland from "./DynamicIsland";
 
 const Layout = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <DynamicIsland />
       <Outlet />
     </>
   );

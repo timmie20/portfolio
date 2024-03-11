@@ -7,7 +7,7 @@ export const data = [
     projectURL: "https://builddepot.netlify.app",
     techUsed: [
       {
-        name: "React",
+        name: "ReactJs",
         imgURL: "icons/react.svg",
       },
       {
@@ -28,11 +28,11 @@ export const data = [
     id: 2,
     projectName: "GroupGo",
     projectInfo:
-      "A start-up project. This app simplifies the complexcitiy that comes with event planning. Groupgo provides a step by step process to event creation. Events can be shared amongst friends and family after creation.",
+      "Groupgo is a cutting-edge event planning application that streamlines the process, offering a user-friendly step-by-step guide for organizing and overseeing your event. Additionally, it enables you to effortlessly share your events with your friends and family",
     projectURL: "https://groupgo.netlify.app",
     techUsed: [
       {
-        name: "React",
+        name: "ReactJs",
         imgURL: "icons/react.svg",
       },
       {
@@ -67,6 +67,10 @@ export const data = [
       {
         name: "JavaScript",
         imgURL: "icons/js.svg",
+      },
+      {
+        name: "API",
+        imgURL: "icons/api.png",
       },
     ],
   },
