@@ -5,8 +5,8 @@ import arrowRight from "../assets/arrow-side.svg";
 const ProjectPreview = ({ project }) => {
   return (
     <>
-      <div className="container mx-auto flex h-fit flex-col-reverse px-5 md:flex-row">
-        <aside className="flex w-full flex-col gap-6 rounded-b-xl bg-[#1B1B1B] p-4 md:w-[40%] md:gap-16 md:rounded-l-xl md:px-7 md:py-10 lg:gap-32">
+      <div className="flex h-fit flex-col-reverse md:flex-row">
+        <aside className="flex w-full flex-col gap-6 rounded-b-xl bg-[#1B1B1B] p-4 md:w-[40%] md:gap-16 md:rounded-l-xl md:rounded-r-none md:px-7 md:py-10 lg:gap-32">
           <div className="flex flex-col gap-4">
             <h3 className="font-medium">{project.projectName}</h3>
             <p className="opacity-50">{project.projectInfo}</p>
@@ -43,7 +43,7 @@ const ProjectPreview = ({ project }) => {
           frameBorder="0"
           allowFullScreen
           scrolling="no"
-          className="w-full bg-white md:rounded-r-xl"
+          className="w-full rounded-t-xl bg-white md:rounded-r-xl md:rounded-tl-none "
         ></iframe>
       </div>
     </>

@@ -2,10 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  font-family: Lato, sans-serif;
   background: black;
   color: white;
-  /* overscroll-behavior: none; */
+}
+
+.first_cover {
+  background-image: url("./assets/image9.png");
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: top;
+}
+
+/* .second_cover {
+  background-image: url("./assets/image10.png"), url("./assets/image2.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position-x: center, left;
+  background-position-y: top, bottom;
+} */
+
+.third_cover {
+  background-image: url("./assets/image8.png"), url("./assets/image11.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position-x: right, left;
+  background-position-y: top, bottom;
+}
+.first_cover,
+.third_cover {
+  @apply w-full;
+}
+
+@media (max-width: 1024px) {
+  .third_cover {
+    display: none;
+  }
 }
 
 h1 {
@@ -24,6 +59,15 @@ h4 {
   font-size: 18px;
 }
 
-svg {
-  @apply fill-slate-800;
+.island_icons svg {
+  @apply cursor-pointer fill-slate-800 hover:fill-gray-300;
+}
+
+.island_icons svg.active {
+  @apply fill-customOrange;
+}
+
+.social_links svg {
+  fill: white;
+  cursor: pointer;
 }

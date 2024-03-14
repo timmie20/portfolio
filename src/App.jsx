@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import { AppProvider } from "./context/AppContext";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-        </Route>
-      </Routes>
+      <AppProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </AppProvider>
     </>
   );
 }
