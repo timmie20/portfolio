@@ -14,7 +14,10 @@ const Hero = () => {
   });
   return (
     <>
-      <section className="container mx-auto mb-52 flex h-dvh flex-col items-center justify-center gap-6 p-4 md:mb-72 md:gap-0">
+      <section
+        className="container mx-auto mb-52 flex h-dvh flex-col items-center justify-center gap-6 p-4 md:mb-72 md:gap-0"
+        id="hero"
+      >
         <div className="flex items-center gap-6">
           <Link
             to="#"
@@ -34,6 +37,9 @@ const Hero = () => {
           </HashLink>
         </div>
         <h1 className="text-[75px] font-semibold md:text-[150px] md:leading-snug lg:text-[200px] xl:text-[300px]">
+          <p className="text-sm font-normal leading-none md:text-base">
+            Hi there 👋 , I'm{" "}
+          </p>
           Timilehin
         </h1>
         <HashLink
@@ -53,9 +59,7 @@ const Hero = () => {
           </h1>
           <div className="flex items-center gap-2 ">
             <FaMapLocationDot size={20} color="white" />
-            <p className="text-xl text-white/55 md:text-[24px]">
-              Lagos, Nigeria
-            </p>
+            <p className="text-lg text-white/55 md:text-xl">Lagos, Nigeria</p>
           </div>
           <h3 className="w-[70%] text-lg md:text-[22px]">
             I build websites that are fast, accessible, and user-friendly.

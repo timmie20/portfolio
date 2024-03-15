@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import arrowRight from "../assets/arrow-side.svg";
-import insta from "../assets/insta.svg";
-import twitter from "../assets/twitterx.svg";
-import tiktok from "../assets/tiktok.svg";
+import { AppContext } from "../context/AppContext";
+import { useInView } from "react-intersection-observer";
 
 const ContactBanner = () => {
+  const { setContactInView } = useContext(AppContext);
+
+  const { ref: contactSectionRef } = useInView({
+    threshold: 0.7,
+    onChange: (inView) => {
+      setContactInView(inView);
+    },
+  });
   return (
-    <section className="relative" id="contact">
+    <section className="relative mt-36" id="contact" ref={contactSectionRef}>
       <div className="banner flex h-[621px]">
         <div className="first_cover "></div>
         {/* <div className="second_cover invisible"></div> */}
@@ -14,7 +21,7 @@ const ContactBanner = () => {
       </div>
       <div className="absolute inset-x-0 inset-y-[20%] flex h-fit flex-col items-center justify-center gap-5 border-[1px] border-white/10 bg-[#1B1B1B]/30 py-28">
         <h2 className="text-xl md:text-[32px]">Got a project idea?</h2>
-        <div className="flex cursor-pointer items-center gap-2 rounded-full bg-customOrange px-10 py-5">
+        <div className="flex cursor-pointer items-center gap-2 rounded-full border-[1px] border-customOrange bg-customOrange px-10 py-5 hover:bg-transparent hover:transition hover:duration-300 hover:ease-in-out">
           <p>Let's Connect</p>
           <img src={arrowRight} alt="arrow right" />
         </div>

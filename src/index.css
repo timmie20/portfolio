@@ -59,15 +59,18 @@ h4 {
   font-size: 18px;
 }
 
-.island_icons svg {
-  @apply cursor-pointer fill-slate-800 hover:fill-gray-300;
+.island_link {
+  @apply cursor-pointer text-sm font-medium hover:transition-all hover:duration-300 hover:ease-in-out md:text-[15px] md:hover:scale-110;
 }
 
-.island_icons svg.active {
-  @apply fill-customOrange;
+.island_links svg {
+  @apply cursor-pointer fill-slate-500 hover:fill-gray-300;
+}
+
+.island_link.active {
+  @apply text-white;
 }
 
 .social_links svg {
-  fill: white;
-  cursor: pointer;
+  @apply cursor-pointer fill-slate-200 transition-all ease-in-out hover:scale-110 hover:duration-300;
 }

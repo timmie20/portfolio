@@ -5,21 +5,22 @@ import { AppContext } from "../context/AppContext";
 import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
-  const { current, setCurrent } = useContext(AppContext);
+  const { setProjectsInView } = useContext(AppContext);
 
-  const { ref: sectionRef } = useInView({
+  const { ref: projectSectionRef } = useInView({
+    threshold: 0.4,
     onChange: (inView) => {
-      setCurrent(inView);
+      setProjectsInView(inView);
       // console.log(inView);
     },
   });
 
   return (
     <>
-      <section ref={sectionRef} id="projects" className="relative">
+      <section ref={projectSectionRef} id="projects" className=" relative">
         <div className="h-[170dvh] w-full bg-customOrange"></div>
 
-        <div className="container absolute inset-x-0 -top-28 mx-auto flex flex-col gap-16 px-4">
+        <div className="container absolute inset-x-0 -top-32 mx-auto flex flex-col gap-16 px-4">
           {data.map((project) => (
             <ProjectPreview project={project} key={project.id} />
           ))}
