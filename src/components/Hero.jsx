@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <>
       <section
-        className="container mx-auto mb-52 flex h-dvh flex-col items-center justify-center gap-6 p-4 md:mb-72 md:gap-0"
+        className="container mx-auto mb-60 flex h-dvh flex-col items-center justify-center gap-6 p-4 md:mb-72 md:gap-0"
         id="hero"
       >
         <div className="flex items-center gap-6">

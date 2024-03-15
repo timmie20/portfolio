@@ -11,7 +11,7 @@ const DynamicIsland = () => {
   useEffect(() => {
     const handleShowNav = () => {
       const viewportHeight = window.scrollY;
-      setShowComponent(viewportHeight >= 730 ? true : false);
+      setShowComponent(viewportHeight >= 700 ? true : false);
     };
 
     window.addEventListener("scroll", handleShowNav);
@@ -46,7 +46,7 @@ const DynamicIsland = () => {
             spy={true}
             smooth={true}
             offset={-170}
-            duration={400}
+            duration={500}
             className={`island_link ${skillsInView ? "active" : ""}`}
           >
             Skills
@@ -57,7 +57,7 @@ const DynamicIsland = () => {
             spy={true}
             smooth={true}
             offset={-170}
-            duration={400}
+            duration={500}
             className={`island_link ${projectsInView ? "active" : ""}`}
           >
             Projects
@@ -68,7 +68,7 @@ const DynamicIsland = () => {
             spy={true}
             smooth={true}
             offset={-170}
-            duration={400}
+            duration={500}
             className={`island_link ${contactInView ? "active" : ""}`}
           >
             Contact
