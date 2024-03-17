@@ -121,9 +121,3 @@ h4 {
   right: 0;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
 }
-
-/* @media (max-width: 768px) {
-  .logo-slide img {
-    margin: 0 100px;
-  }
-} */

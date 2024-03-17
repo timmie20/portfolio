@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import arrowRight from "../assets/arrow-side.svg";
 import { AppContext } from "../context/AppContext";
 import { useInView } from "react-intersection-observer";
+import ContactModal from "../pages/modal/ContactModal";
 
 const ContactBanner = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const { setContactInView } = useContext(AppContext);
 
   const { ref: contactSectionRef } = useInView({
@@ -20,12 +23,18 @@ const ContactBanner = () => {
           {/* <div className="second_cover invisible"></div> */}
           <div className="third_cover "></div>
         </div>
-        <div className="absolute inset-x-0 inset-y-[20%] flex h-fit flex-col items-center justify-center gap-5 border-[1px] border-white/10 bg-[#1B1B1B]/30 py-28">
+        <div className="absolute inset-x-0 inset-y-[20%] flex h-fit flex-col items-center justify-center gap-10 border-[1px] border-white/10 bg-[#1B1B1B]/30 py-28">
           <h2 className="text-xl md:text-[32px]">Got a project idea?</h2>
-          <div className="flex cursor-pointer items-center gap-2 rounded-full border-[1px] border-customOrange bg-customOrange px-10 py-5 hover:bg-transparent hover:transition hover:duration-300 hover:ease-in-out">
-            <p>Let's Connect</p>
-            <img src={arrowRight} alt="arrow right" />
-          </div>
+
+          <button
+            className="w-fit rounded-sm bg-customOrange px-10 py-3 font-medium text-white shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+            onClick={() => setIsOpen(true)}
+          >
+            Let's Connect
+          </button>
+
+          {isOpen && <ContactModal setIsOpen={setIsOpen} />}
+
           <div className="social_links flex items-center gap-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -41,6 +41,8 @@ const Skills = () => {
             <img src={redux} alt="" />
             <img src={next} alt="" />
             <img src={git} alt="" />
+          </div>
+          <div className="logo-slide">
             <img src={html} alt="" />
             <img src={css} alt="" />
             <img src={js} alt="" />

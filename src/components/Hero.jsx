@@ -21,19 +21,19 @@ const Hero = () => {
         <div className="flex items-center gap-6">
           <Link
             to="#"
-            className="cursor-pointer rounded-sm border-[1px] border-customOrange px-4 py-2 text-sm font-normal text-white hover:scale-110 hover:duration-150 hover:ease-in-out"
+            // className="cursor-pointer rounded-sm border-[1px] border-customOrange px-4 py-2 text-sm font-normal text-white hover:scale-110 hover:duration-150 hover:ease-in-out"
           >
-            resume
+            Resume
           </Link>
           <HashLink
-            className="animate-pulse cursor-pointer rounded-sm bg-customOrange px-3 py-2 text-sm text-white hover:scale-110 hover:animate-none hover:duration-150 hover:ease-in-out"
+            className="w-fit rounded-sm bg-customOrange px-5 py-2 font-medium text-white shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
             to="contact"
             spy={true}
             smooth={true}
             offset={-170}
             duration={400}
           >
-            contact me
+            Contact me
           </HashLink>
         </div>
         <h1 className="text-[75px] font-semibold md:text-[150px] md:leading-snug lg:text-[200px] xl:text-[300px]">
@@ -52,7 +52,8 @@ const Hero = () => {
         >
           <img src={arrowDown} width={window.width < 768 ? 20 : 30} />
         </HashLink>
-        <div className="mt-7 flex flex-col items-center gap-5 text-wrap text-center">
+        <div className="mt-7 flex flex-col items-center gap-4 text-wrap text-center">
+          <p className="text-sm leading-none">2yrs + experience</p>
           <h1 className="text-3xl md:text-[36px]">
             <span className="font-semibold text-customOrange">{text} </span>
             Developer
