@@ -16,20 +16,21 @@ const Skills = () => {
   const { setSkillsInView } = useContext(AppContext);
 
   const { ref: skillsSectionRef } = useInView({
-    threshold: 0.4,
+    threshold: 1,
     onChange: (inView) => {
       setSkillsInView(inView);
     },
   });
+
   return (
     <>
       <section
-        className="container mx-auto mb-[300px] px-4 "
+        className="container mx-auto mb-0 px-4 md:mb-[200px] "
         ref={skillsSectionRef}
         id="skills"
       >
-        <h2 className="text-2xl md:text-3xl">Well versed in </h2>
-        <div className="logos">
+        <h2 className="text-center text-2xl md:text-3xl">Well versed in </h2>
+        <div className="logos my-10">
           <div className="logo-slide">
             <img src={html} alt="" />
             <img src={css} alt="" />
@@ -41,8 +42,6 @@ const Skills = () => {
             <img src={redux} alt="" />
             <img src={next} alt="" />
             <img src={git} alt="" />
-          </div>
-          <div className="logo-slide">
             <img src={html} alt="" />
             <img src={css} alt="" />
             <img src={js} alt="" />

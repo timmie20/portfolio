@@ -11,7 +11,7 @@ const DynamicIsland = () => {
   useEffect(() => {
     const handleShowNav = () => {
       const viewportHeight = window.scrollY;
-      setShowComponent(viewportHeight >= 710 ? true : false);
+      setShowComponent(viewportHeight >= 690 ? true : false);
     };
 
     window.addEventListener("scroll", handleShowNav);

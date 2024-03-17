@@ -72,8 +72,9 @@ h4 {
   @apply text-white;
 }
 
+.social_links img,
 .social_links svg {
-  @apply cursor-pointer fill-slate-200 transition-all ease-in-out hover:scale-110 hover:duration-300;
+  @apply cursor-pointer rounded-md bg-slate-200 transition-all ease-in-out hover:scale-110 hover:duration-300;
 }
 
 @keyframes slide {
@@ -88,18 +89,17 @@ h4 {
 .logos {
   overflow: hidden;
   white-space: nowrap;
-  padding: 60px 0;
   position: relative;
 }
 
 .logo-slide {
-  display: flex;
   animation: 15s slide infinite linear;
 }
 
 .logo-slide img {
   height: 70px;
   margin: 0 35px;
+  display: inline-block;
 }
 
 .logos:before,
