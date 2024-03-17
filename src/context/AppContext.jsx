@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const AppContext = createContext(null);
 export const AppProvider = ({ children }) => {
-  const [skillsInView, setSkillInView] = useState(false);
+  const [skillsInView, setSkillsInView] = useState(false);
   const [projectsInView, setProjectsInView] = useState(false);
   const [contactInView, setContactInView] = useState(false);
 
@@ -10,7 +10,7 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         skillsInView,
-        setSkillInView,
+        setSkillsInView,
         projectsInView,
         setProjectsInView,
         contactInView,

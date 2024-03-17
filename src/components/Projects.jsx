@@ -18,7 +18,7 @@ const Projects = () => {
   return (
     <>
       <section ref={projectSectionRef} id="projects" className=" relative">
-        <div className="h-[170dvh] w-full bg-customOrange"></div>
+        <div className="h-[1440px] w-full bg-customOrange"></div>
         <div className="container absolute inset-x-0 -top-32 mx-auto flex flex-col gap-16 px-4">
           {data.map((project) => (
             <ProjectPreview project={project} key={project.id} />

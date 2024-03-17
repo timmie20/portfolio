@@ -44,7 +44,7 @@ const Hero = () => {
         </h1>
         <HashLink
           className=" flex size-14 animate-bounce cursor-pointer items-center justify-center rounded-full bg-white duration-300 ease-in hover:animate-none md:size-20"
-          to="projects"
+          to="skills"
           spy={true}
           smooth={true}
           offset={-170}

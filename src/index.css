@@ -75,3 +75,55 @@ h4 {
 .social_links svg {
   @apply cursor-pointer fill-slate-200 transition-all ease-in-out hover:scale-110 hover:duration-300;
 }
+
+@keyframes slide {
+  from {
+    tranform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 60px 0;
+  position: relative;
+}
+
+.logo-slide {
+  display: flex;
+  animation: 15s slide infinite linear;
+}
+
+.logo-slide img {
+  height: 70px;
+  margin: 0 35px;
+}
+
+.logos:before,
+.logos::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
+}
+
+/* @media (max-width: 768px) {
+  .logo-slide img {
+    margin: 0 100px;
+  }
+} */

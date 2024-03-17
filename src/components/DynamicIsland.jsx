@@ -11,7 +11,7 @@ const DynamicIsland = () => {
   useEffect(() => {
     const handleShowNav = () => {
       const viewportHeight = window.scrollY;
-      setShowComponent(viewportHeight >= 700 ? true : false);
+      setShowComponent(viewportHeight >= 710 ? true : false);
     };
 
     window.addEventListener("scroll", handleShowNav);
@@ -23,7 +23,7 @@ const DynamicIsland = () => {
   return (
     <>
       {showComponent && (
-        <div className="island_links fixed inset-x-0 top-5 z-20 mx-auto flex w-[60%] max-w-[370px] items-center justify-center gap-4 rounded-xl border-[1px] border-white/10 bg-[#1B1B1B]/70 py-2 text-white/80 opacity-90 shadow-2xl backdrop-blur-lg md:gap-8">
+        <div className="island_links fixed inset-x-0 top-5 z-20 mx-auto flex w-[90%] max-w-[370px] items-center justify-center gap-4 rounded-xl border-[1px] border-white/10 bg-[#1B1B1B]/70 py-2 text-white/80 opacity-90 shadow-2xl backdrop-blur-lg md:gap-8">
           <HashLink
             to="hero"
             spy={true}
@@ -42,7 +42,7 @@ const DynamicIsland = () => {
           </HashLink>
 
           <HashLink
-            to="hero"
+            to="skills"
             spy={true}
             smooth={true}
             offset={-170}
