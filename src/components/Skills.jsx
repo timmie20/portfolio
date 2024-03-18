@@ -1,19 +1,12 @@
-import React, { useContext } from "react";
-import html from "../assets/html.png";
-import css from "../assets/css.png";
-import js from "../assets/js.png";
-import tailwind from "../assets/tailwind.png";
-import vue from "../assets/vue.png";
-import react from "../assets/react.png";
-import next from "../assets/next.png";
-import redux from "../assets/redux.png";
-import ts from "../assets/ts.png";
-import git from "../assets/git.png";
+import React, { useContext, useEffect, useRef } from "react";
 import { AppContext } from "../context/AppContext";
 import { useInView } from "react-intersection-observer";
+import { data } from "../data";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   const { setSkillsInView } = useContext(AppContext);
+  const { skillObj } = data;
 
   const { ref: skillsSectionRef } = useInView({
     threshold: 1,
@@ -21,6 +14,16 @@ const Skills = () => {
       setSkillsInView(inView);
     },
   });
+
+  // const skillsSectionRef = useRef(null);
+  // const isInView = useInView(skillsSectionRef);
+
+  // useEffect(() => {
+  //   if (isInView) {
+  //     // setSkillsInView(isInView);
+  //     console.log(isInView);
+  //   }
+  // }, [isInView]);
 
   return (
     <>
@@ -31,16 +34,27 @@ const Skills = () => {
       >
         <h2 className="text-center text-2xl md:text-3xl">Well-versed in</h2>
         <div className="mx-auto mt-20 flex flex-wrap items-center justify-center gap-5 md:w-[80%]">
-          <img src={html} alt="" />
-          <img src={css} alt="" />
-          <img src={js} alt="" />
-          <img src={ts} alt="" />
-          <img src={tailwind} alt="" />
-          <img src={vue} alt="" />
-          <img src={react} alt="" />
-          <img src={redux} alt="" />
-          <img src={next} alt="" width={75} />
-          <img src={git} alt="" />
+          {skillObj.map((skill) =>
+            skill.id % 2 ? (
+              <motion.div
+                key={skill.id}
+                // initial={{ y: 30 }}
+                // whileInView={{ y: [30, -30, 0] }}
+                // transition={{ duration: 1.4, ease: "backInOut" }}
+              >
+                <img src={skill.imgPath} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key={skill.id}
+                // initial={{ y: -30 }}
+                // whileInView={{ y: [-30, 30, 0] }}
+                // transition={{ duration: 1.4, ease: "backInOut" }}
+              >
+                <img src={skill.imgPath} />
+              </motion.div>
+            ),
+          )}
         </div>
       </section>
     </>

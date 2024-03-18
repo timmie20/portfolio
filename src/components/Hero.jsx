@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Link as HashLink } from "react-scroll";
-import arrowDown from "../assets/arrow-down.svg";
 import { useTypewriter } from "react-simple-typewriter";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -16,7 +15,7 @@ const Hero = () => {
   return (
     <>
       <motion.section
-        className="container relative mx-auto mb-0 flex h-dvh flex-col items-center justify-center gap-6 p-4 md:mb-32 md:gap-0"
+        className="container mx-auto mb-0 flex h-dvh flex-col items-center justify-center gap-6 p-4 md:mb-32 md:gap-0"
         id="hero"
       >
         <motion.div
@@ -29,7 +28,7 @@ const Hero = () => {
             Resume
           </Link>
           <HashLink
-            className="w-fit rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-white shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+            className="w-fit cursor-pointer rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-white shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
             to="contact"
             spy={true}
             smooth={true}
@@ -40,7 +39,7 @@ const Hero = () => {
           </HashLink>
         </motion.div>
         <motion.h1
-          className="text-[80px] font-semibold md:text-[150px] md:leading-snug lg:text-[200px] xl:text-[290px]"
+          className="text-[80px] font-semibold md:text-[150px] md:leading-snug lg:text-[200px] xl:text-[300px]"
           initial={{ opacity: 0.2, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
@@ -55,9 +54,9 @@ const Hero = () => {
           initial={{ scale: 0.1, y: 0 }}
           animate={{
             scale: 1,
-            y: [0, 60, -90, -90, 5, 0],
+            y: [0, 60, -90, -90, 10, 0],
           }}
-          transition={{ duration: 1.7, ease: "backInOut" }}
+          transition={{ duration: 2, ease: "backInOut" }}
         >
           <HashLink
             to="skills"
@@ -77,7 +76,10 @@ const Hero = () => {
             </motion.p>
           </HashLink>
         </motion.div>
-        <div className="mt-7 flex flex-col items-center gap-4 text-wrap text-center">
+        <p className="hidden text-sm md:mt-5 lg:block">{`function launch ( hover, click ) {
+              hover + click
+            }`}</p>
+        <div className="flex flex-col items-center gap-5 text-wrap text-center md:mt-5">
           <p className="text-sm leading-none">2yrs + experience</p>
           <h1 className="text-3xl md:text-[36px]">
             <span className="font-semibold text-customOrange">{text} </span>
@@ -87,8 +89,9 @@ const Hero = () => {
             <FaMapLocationDot size={20} color="white" />
             <p className="text-lg text-white/55 md:text-xl">Lagos, Nigeria</p>
           </div>
-          <h3 className="w-[70%] text-lg md:text-[22px]">
-            I build websites that are fast, accessible, and user-friendly.
+          <h3 className="text-base leading-normal md:w-[80%] md:text-[22px]">
+            I leverage both code & no-code tools to build highly scaleable and
+            interactive user interfaces and web applications
           </h3>
         </div>
       </motion.section>

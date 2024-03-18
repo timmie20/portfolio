@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import ProjectPreview from "./ProjectPreview";
-import { data } from "../projectData";
+import { data } from "../data";
 import { AppContext } from "../context/AppContext";
 import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
   const { setProjectsInView } = useContext(AppContext);
+  const { projectData } = data;
 
   const { ref: projectSectionRef } = useInView({
     threshold: 0.3,
@@ -25,7 +26,7 @@ const Projects = () => {
         <h2 className="text-center text-2xl md:text-3xl">Projects</h2>
 
         <div className="mt-10 flex flex-col gap-16">
-          {data.map((project) => (
+          {projectData.map((project) => (
             <ProjectPreview project={project} key={project.id} />
           ))}
         </div>
