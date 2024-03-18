@@ -26,7 +26,7 @@ const ContactBanner = () => {
           {/* <div className="second_cover invisible"></div> */}
           <div className="third_cover "></div>
         </div>
-        <div className="absolute inset-x-0 inset-y-[20%] flex h-fit flex-col items-center justify-center gap-10 border-[1px] border-white/10 bg-[#1B1B1B]/30 py-28">
+        <div className="absolute inset-x-0 inset-y-[20%] flex h-fit flex-col items-center justify-center gap-10 border-[1px] border-white/10 bg-[#1B1B1B]/70 py-28">
           <h2 className="text-xl md:text-[32px]">Got a project idea?</h2>
 
           <button

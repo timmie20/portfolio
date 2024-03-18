@@ -8,7 +8,7 @@ const Projects = () => {
   const { setProjectsInView } = useContext(AppContext);
 
   const { ref: projectSectionRef } = useInView({
-    threshold: 0.4,
+    threshold: 0.3,
     onChange: (inView) => {
       setProjectsInView(inView);
       // console.log(inView);
