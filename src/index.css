@@ -60,6 +60,10 @@ h4 {
   font-size: 18px;
 }
 
+.primary-btn {
+  @apply w-fit cursor-pointer rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-white shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none;
+}
+
 .island_link {
   @apply cursor-pointer text-sm font-medium hover:transition-all hover:duration-300 hover:ease-in-out md:text-[15px] md:hover:scale-110;
 }

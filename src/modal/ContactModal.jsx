@@ -9,7 +9,7 @@ const ContactModal = ({ setIsOpen }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)}
+            // onClick={() => setIsOpen(false)}
             className="fixed inset-0 z-50 grid place-items-center overflow-y-scroll bg-slate-900/20 p-8 backdrop-blur"
           >
             <motion.div
@@ -17,9 +17,20 @@ const ContactModal = ({ setIsOpen }) => {
               animate={{ scale: 1, rotate: "0deg" }}
               exit={{ scale: 0, rotate: "0deg" }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-lg overflow-hidden rounded-lg bg-white/90 p-6 text-black shadow-xl"
+              className="w-full max-w-lg space-y-5 overflow-hidden text-wrap rounded-lg bg-white/80 p-6 text-center text-black shadow-xl"
             >
-              <form className="flex w-full flex-col gap-4">
+              <p className="text-red-600">
+                Sorry! sending a mail from my website is currently unavailable
+              </p>
+              <p>
+                Reach me at "olutimilehinolayinka1234@gmail.com" or via any of
+                the social media links below and I'll respond as soon as I can,
+                Thanks.
+              </p>
+              <button className="primary-btn" onClick={() => setIsOpen(false)}>
+                Close
+              </button>
+              {/* <form className="flex w-full flex-col gap-4">
                 <h3 className="text-3xl font-bold text-customOrange">
                   Send an email
                 </h3>
@@ -54,7 +65,7 @@ const ContactModal = ({ setIsOpen }) => {
                     Send
                   </button>
                 </div>
-              </form>
+              </form> */}
             </motion.div>
           </motion.div>
         </AnimatePresence>

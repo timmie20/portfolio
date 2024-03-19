@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as HashLink } from "react-scroll";
 import { useTypewriter } from "react-simple-typewriter";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import ResumeOption from "../modal/ResumeOption";
 
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [text] = useTypewriter({
     words: ["Web", "React", "WebFlow"],
     loop: {},
@@ -14,21 +16,22 @@ const Hero = () => {
   });
   return (
     <>
-      <motion.section
+      <section
         className="container mx-auto mb-0 flex h-dvh flex-col items-center justify-center gap-6 p-4 md:mb-32 md:gap-0"
         id="hero"
       >
+        {isOpen && <ResumeOption setIsOpen={setIsOpen} />}
         <motion.div
           className="flex items-center gap-6 md:gap-8"
           initial={{ opacity: 0.3, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.3, ease: "linear" }}
         >
-          <Link to="#" className="text-sm">
+          <Link to="#" className="text-sm" onClick={() => setIsOpen(true)}>
             Resume
           </Link>
           <HashLink
-            className="w-fit cursor-pointer rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-white shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+            className="primary-btn"
             to="contact"
             spy={true}
             smooth={true}
@@ -94,7 +97,7 @@ const Hero = () => {
             interactive user interfaces and web applications
           </h3>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 };
