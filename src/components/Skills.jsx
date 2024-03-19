@@ -28,7 +28,7 @@ const Skills = () => {
   return (
     <>
       <section
-        className="container mx-auto mb-[150px] px-4 "
+        className="container mx-auto mb-[200px] px-4 "
         ref={skillsSectionRef}
         id="skills"
       >
