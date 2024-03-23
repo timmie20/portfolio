@@ -6,9 +6,11 @@ import { AppContext } from "../context/AppContext";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import ContactModal from "../modal/ContactModal";
+import Notification from "./Notification";
 
 const ContactBanner = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [notification, setNotification] = useState(false);
 
   const { setContactInView } = useContext(AppContext);
 
@@ -20,6 +22,12 @@ const ContactBanner = () => {
   });
   return (
     <>
+      {notification && (
+        <Notification
+          notifications={notification}
+          setNotification={setNotification}
+        />
+      )}
       <section className="relative mt-32" id="contact" ref={contactSectionRef}>
         <div className="banner flex h-[621px]">
           <div className="first_cover "></div>
@@ -35,7 +43,12 @@ const ContactBanner = () => {
             Let's Connect
           </button>
 
-          {isOpen && <ContactModal setIsOpen={setIsOpen} />}
+          {isOpen && (
+            <ContactModal
+              setIsOpen={setIsOpen}
+              setNotification={setNotification}
+            />
+          )}
 
           <div className="social_links flex items-center gap-4">
             <Link to="https://github.com/timmie20" target="_blank">
