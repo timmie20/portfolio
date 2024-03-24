@@ -34,7 +34,7 @@ const ContactModal = ({ setIsOpen, setNotification }) => {
       setMessage("");
     } catch (error) {
       setIsOpen(false);
-      setNotification("Unable to send email at this time, try again later");
+      setNotification("Unable to send email at this time, try again later !");
       console.log(error.text);
     }
   };
