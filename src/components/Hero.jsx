@@ -16,7 +16,7 @@ const Hero = () => {
   });
   return (
     <>
-      <section
+      <main
         className="container mx-auto mb-0 flex h-dvh flex-col items-center justify-center gap-6 p-4 md:mb-32 md:gap-0"
         id="hero"
       >
@@ -83,7 +83,7 @@ const Hero = () => {
               hover + click
             }`}</p>
         <div className="flex flex-col items-center gap-5 text-wrap text-center md:mt-5">
-          <p className="text-sm leading-none">2yrs + experience</p>
+          <p className="text-sm leading-none">3yrs experience</p>
           <h1 className="text-3xl md:text-[36px]">
             <span className="font-semibold text-customOrange">{text} </span>
             Developer
@@ -97,7 +97,7 @@ const Hero = () => {
             interactive user interfaces and web applications
           </h3>
         </div>
-      </section>
+      </main>
     </>
   );
 };

@@ -26,18 +26,18 @@ const ContactModal = ({ setIsOpen, setNotification }) => {
       await emailjs.send(serviceId, templateId, templateParams, {
         publicKey: import.meta.env.VITE_REACT_PUBLIC_KEY,
       });
-      setNotification(true);
       setLoading(false);
+      setNotification("Email sent successfully, I'll get back to you ASAP");
       setIsOpen(false);
       setName("");
       setEmail("");
       setMessage("");
     } catch (error) {
+      setIsOpen(false);
+      setNotification("Unable to send email at this time, try again later");
       console.log(error.text);
     }
   };
-
-  emailjs;
 
   return (
     <>
@@ -77,6 +77,7 @@ const ContactModal = ({ setIsOpen, setNotification }) => {
                   className="w-full rounded-md border-[1px] border-slate-900/20 px-4 py-2 outline-none"
                   placeholder="Enter email address"
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
 
                 <textarea
@@ -86,6 +87,7 @@ const ContactModal = ({ setIsOpen, setNotification }) => {
                   className="over w-full resize-none rounded-md border-[1px] border-slate-900/20 px-4 py-3 outline-none"
                   placeholder="Subject..."
                   onChange={(e) => setMessage(e.target.value)}
+                  required
                 ></textarea>
 
                 <div className="flex gap-2">
@@ -97,7 +99,8 @@ const ContactModal = ({ setIsOpen, setNotification }) => {
                   </button>
                   <button
                     onClick={handleSendEmail}
-                    className="w-full rounded bg-customOrange py-2 font-semibold text-white transition-opacity hover:opacity-90"
+                    className="w-full rounded bg-customOrange py-2 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                    disabled={!email || !messsage}
                   >
                     {loading ? "sending..." : "send"}
                   </button>

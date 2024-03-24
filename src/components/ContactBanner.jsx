@@ -10,7 +10,7 @@ import Notification from "./Notification";
 
 const ContactBanner = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [notification, setNotification] = useState(false);
+  const [notification, setNotification] = useState("");
 
   const { setContactInView } = useContext(AppContext);
 
@@ -20,11 +20,12 @@ const ContactBanner = () => {
       setContactInView(inView);
     },
   });
+
   return (
     <>
-      {notification && (
+      {notification !== "" && (
         <Notification
-          notifications={notification}
+          notification={notification}
           setNotification={setNotification}
         />
       )}
