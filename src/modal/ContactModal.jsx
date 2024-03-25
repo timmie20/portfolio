@@ -24,7 +24,8 @@ const ContactModal = ({ setIsOpen, setNotification }) => {
 
     try {
       await emailjs.send(serviceId, templateId, templateParams, {
-        publicKey: import.meta.env.VITE_REACT_PUBLIC_KEY,
+        publicKey: "zHhpGNzVTCP5E8Q6E",
+        // import.meta.env.VITE_REACT_PUBLIC_KEY
       });
       setLoading(false);
       setNotification("Email sent successfully, I'll get back to you ASAP");
