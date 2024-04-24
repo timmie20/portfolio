@@ -21,7 +21,7 @@ const Projects = () => {
       <section
         ref={projectSectionRef}
         id="projects"
-        className="container mx-auto mt-36 px-4"
+        className="mx-auto mt-36 max-w-[1300px] px-4"
       >
         <h2 className="text-center text-2xl md:text-3xl">Projects</h2>
 

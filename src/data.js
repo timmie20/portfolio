@@ -30,7 +30,7 @@ export const data = {
       projectName: "GroupGo",
       projectInfo:
         "Groupgo is a cutting-edge event planning application that streamlines the process, offering a user-friendly step-by-step guide for organizing and overseeing your event. Additionally, it enables you to effortlessly share your events with your friends and family",
-      projectURL: "https://groupgo.netlify.app",
+      projectURL: "https://groupgo.vercel.app",
       techUsed: [
         {
           name: "ReactJs",

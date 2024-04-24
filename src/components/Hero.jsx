@@ -68,7 +68,7 @@ const Hero = () => {
             offset={-170}
             duration={400}
           >
-            <span className="absolute right-0 top-2 size-3 animate-ping rounded-full bg-customOrange md:size-4"></span>
+            <span className="absolute right-0 top-2 size-3.5 animate-ping rounded-full bg-customOrange md:size-4"></span>
             <motion.p
               className="text-2xl md:text-3xl"
               initial={{ rotate: "45deg" }}
@@ -79,11 +79,8 @@ const Hero = () => {
             </motion.p>
           </HashLink>
         </motion.div>
-        <p className="hidden text-sm md:mt-5 lg:block">{`function launch ( hover, click ) {
-              hover + click
-            }`}</p>
         <div className="flex flex-col items-center gap-5 text-wrap text-center md:mt-5">
-          <p className="text-sm leading-none">3yrs experience</p>
+          <p className="text-sm leading-none">2yrs experience</p>
           <h1 className="text-3xl md:text-[36px]">
             <span className="font-semibold text-customOrange">{text} </span>
             Developer
