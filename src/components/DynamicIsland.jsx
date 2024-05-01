@@ -26,7 +26,7 @@ const DynamicIsland = () => {
       <AnimatePresence>
         {showComponent && (
           <motion.div
-            className="island_links fixed inset-x-0 z-20 mx-auto flex w-[90%] max-w-[370px] items-center justify-center gap-4 rounded-xl border-[1px] border-white/10 bg-[#1B1B1B]/70 py-2 text-white/80 opacity-90 shadow-2xl backdrop-blur-lg md:gap-8"
+            className="island_links fixed inset-x-0 z-20 mx-auto flex w-[90%] max-w-[300px] items-center justify-center gap-4 rounded-xl border-[1px] border-white/10 bg-[#1B1B1B]/70 py-2 text-white/80 opacity-90 shadow-2xl backdrop-blur-lg md:gap-8"
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 20 }}
             transition={{ duration: 0.5, ease: "backInOut" }}
@@ -71,7 +71,7 @@ const DynamicIsland = () => {
               Projects
             </HashLink>
 
-            <HashLink
+            {/* <HashLink
               to="contact"
               spy={true}
               smooth={true}
@@ -80,7 +80,7 @@ const DynamicIsland = () => {
               className={`island_link ${contactInView ? "active" : ""}`}
             >
               Contact
-            </HashLink>
+            </HashLink> */}
           </motion.div>
         )}
       </AnimatePresence>

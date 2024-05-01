@@ -76,9 +76,8 @@ h4 {
   @apply text-white;
 }
 
-.social_links img,
-.social_links svg {
-  @apply cursor-pointer rounded-md bg-slate-200 transition-all ease-in-out hover:scale-110 hover:duration-300;
+.social_link {
+  @apply grid h-full place-content-center text-3xl md:text-5xl;
 }
 
 @keyframes slide {
@@ -88,40 +87,4 @@ h4 {
   to {
     transform: translateX(-100%);
   }
-}
-
-.logos {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-}
-
-.logo-slide {
-  animation: 15s slide infinite linear;
-}
-
-.logo-slide img {
-  height: 70px;
-  margin: 0 35px;
-  display: inline-block;
-}
-
-.logos:before,
-.logos::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 60px;
-  height: 100%;
-  z-index: 2;
-}
-
-.logos:before {
-  left: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
-}
-
-.logos:after {
-  right: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
 }

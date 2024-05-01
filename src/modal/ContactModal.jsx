@@ -101,7 +101,6 @@ const ContactModal = ({ setIsOpen, setNotification }) => {
                   <button
                     onClick={handleSendEmail}
                     className="w-full rounded bg-customOrange py-2 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
-                    disabled={!email || !messsage}
                   >
                     {loading ? "sending..." : "send"}
                   </button>
