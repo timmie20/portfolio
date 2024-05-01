@@ -227,7 +227,7 @@ const SendEmailBlock = () => {
 
     try {
       await emailjs.send(serviceId, templateId, templateParams, {
-        publicKey: "zHhpGNzVTCP5E8Q6E",
+        publicKey: import.meta.env.VITE_PUBLIC_KEY,
       });
       setLoading(false);
       setNotification("Email sent successfully, I'll get back to you ASAP");
