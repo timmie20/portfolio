@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import { useInView } from "react-intersection-observer";
 import { data } from "../data";
@@ -15,20 +15,10 @@ const Skills = () => {
     },
   });
 
-  // const skillsSectionRef = useRef(null);
-  // const isInView = useInView(skillsSectionRef);
-
-  // useEffect(() => {
-  //   if (isInView) {
-  //     // setSkillsInView(isInView);
-  //     console.log(isInView);
-  //   }
-  // }, [isInView]);
-
   return (
     <>
       <section
-        className="container mx-auto mb-0 mt-[150px] px-4 md:mb-[200px] md:mt-0 "
+        className="container mx-auto mb-0 mt-[150px] px-4 md:mb-[200px] "
         ref={skillsSectionRef}
         id="skills"
       >

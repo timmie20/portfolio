@@ -1,4 +1,3 @@
-import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import DynamicIsland from "../components/DynamicIsland";
 import Reviews from "../components/Reviews";
@@ -9,15 +8,12 @@ import Bento from "../components/Bento";
 const Home = () => {
   return (
     <>
-      <div>
-        <DynamicIsland />
-        {/* <Hero /> */}
-        <Bento />
-        <Skills />
-        <Projects />
-        <Reviews />
-        <ContactBanner />
-      </div>
+      <DynamicIsland />
+      <Bento />
+      <Skills />
+      <Projects />
+      <Reviews />
+      <ContactBanner />
     </>
   );
 };

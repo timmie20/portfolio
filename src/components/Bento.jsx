@@ -1,4 +1,4 @@
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import proficPic from "../assets/profile-pic 4.png";
 import { Link as HashLink } from "react-scroll";
@@ -14,12 +14,15 @@ import Notification from "./Notification";
 const Bento = () => {
   return (
     <>
-      <main className="min-h-screen px-4 py-12 text-zinc-50" id="hero">
+      <main
+        className="container mx-auto min-h-screen px-4 py-12 text-zinc-50"
+        id="hero"
+      >
         <motion.div
           initial="initial"
           animate="animate"
           transition={{ staggerChildren: 0.06 }}
-          className="container mx-auto grid grid-flow-dense grid-cols-12 gap-4"
+          className="grid grid-flow-dense grid-cols-12 gap-4"
         >
           <HeaderBlock />
           <SocialsBlock />
@@ -52,11 +55,14 @@ const Block = ({ className, ...props }) => {
 const HeaderBlock = () => {
   return (
     <Block className="col-span-12 row-span-2 md:col-span-6">
-      <img
-        src={proficPic}
-        alt="Profile picture"
-        className="mb-4 size-20 rounded-full"
-      />
+      <div className="flex items-center gap-3">
+        <img
+          src={proficPic}
+          alt="Profile picture"
+          className="mb-4 size-20 rounded-full"
+        />
+        <h4 className="text-zinc-50">React Web Developer</h4>
+      </div>
 
       <h1 className="text-4xl font-semibold leading-tight">
         Hi , I'm Timilehin,{" "}
@@ -65,25 +71,34 @@ const HeaderBlock = () => {
         </span>
       </h1>
 
-      <motion.div
-        className="mt-10 grid size-12 cursor-pointer place-content-center rounded-full bg-zinc-500 transition-all duration-300 ease-in-out hover:bg-zinc-50 hover:text-black md:size-14"
-        initial={{ scale: 0.3, x: 0 }}
-        animate={{
-          scale: 1,
-          x: [0, 100, 100, 0],
-        }}
-        transition={{ duration: 1.4, ease: "backInOut" }}
-      >
-        <HashLink
-          to="skills"
-          spy={true}
-          smooth={true}
-          offset={-170}
-          duration={400}
+      <div className="mt-10 flex items-center justify-between">
+        <motion.div
+          className="grid size-12 cursor-pointer place-content-center rounded-full bg-zinc-500 transition-colors duration-300 ease-in-out hover:bg-zinc-300 hover:text-zinc-700 md:size-14"
+          initial={{ scale: 0.3, x: 0 }}
+          animate={{
+            scale: 1,
+            x: [0, 100, 100, 0],
+          }}
+          transition={{ duration: 1.4, ease: "backInOut" }}
         >
-          <FaAnglesDown />
-        </HashLink>
-      </motion.div>
+          <HashLink
+            to="skills"
+            spy={true}
+            smooth={true}
+            offset={-170}
+            duration={400}
+          >
+            <FaAnglesDown />
+          </HashLink>
+        </motion.div>
+
+        <a
+          href="#"
+          className="w-fit rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-zinc-50 shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+        >
+          My Resume
+        </a>
+      </div>
     </Block>
   );
 };
@@ -160,17 +175,17 @@ const SocialsBlock = () => {
 
 const AboutBlock = () => {
   return (
-    <Block className="col-span-12 text-xl leading-snug md:text-2xl lg:text-3xl">
+    <Block className="col-span-12 text-xl leading-snug md:text-2xl lg:text-[28px]">
       <p className="flex flex-col">
         I love brainstorming and turning my ideas into cash. It's pretty
         awesome!{" "}
         <span className="text-zinc-400">
-          I build primarily with React, Tailwind CSS, Framer Motion and
-          Firebase, although I am not limited to them. I also leverage both code
-          & no-code tools to build highly scaleable and interactive user
-          interfaces.
+          I have 2years+ experience and build primarily with React, Tailwind
+          CSS, Framer Motion and Firebase, although I am not limited to them. I
+          also leverage both code & no-code tools to build highly scaleable and
+          interactive user interfaces.
         </span>
-        <span className="text-lg">
+        <span className="mt-3 text-base">
           Check out my TikTok page for helpful tech tips and web development
           content. Please follow and leave a comment if you enjoy my content.
         </span>
@@ -181,9 +196,11 @@ const AboutBlock = () => {
 
 const LocationBlock = () => {
   return (
-    <Block className="col-span-12 flex flex-col items-center gap-4 md:col-span-3">
+    <Block className="col-span-12 flex flex-col items-center justify-center gap-4 md:col-span-3">
       <FaMapLocationDot size={30} />
-      <p className="text-center text-lg text-zinc-400">Lagos, Nigeria</p>
+      <p className="text-center text-lg text-zinc-400">
+        Based in Lagos, Nigeria
+      </p>
     </Block>
   );
 };
@@ -242,26 +259,27 @@ const SendEmailBlock = () => {
             @ olutimilehinolayinka1234@gmail.com
           </a>
         </p>
-        <form className="flex items-center gap-2">
-          {/* <input
+
+        <form className="flex flex-col items-center gap-2 lg:flex-row lg:items-center">
+          <input
             type="email"
-            className="w-full rounded-md border-[1px] border-zinc-700 bg-transparent px-4 outline-none"
+            className="w-full rounded-md border-[1px] border-zinc-700 bg-transparent px-4 py-3 outline-none"
             placeholder="Enter your email"
             onChange={(e) => setEmail(e.target.value)}
             required
-          /> */}
+          />
 
-          <input
+          <textarea
             className="w-full resize-none rounded border-[1px] border-zinc-700 bg-transparent px-4 py-3 focus:outline-none"
             placeholder="Subject..."
             onChange={(e) => setMessage(e.target.value)}
             required
-          />
+          ></textarea>
           <button
             type="submit"
             onClick={handleSendEmail}
             className="flex items-center gap-2 whitespace-nowrap rounded bg-customOrange px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-300 hover:text-zinc-700 disabled:cursor-not-allowed "
-            disabled={!messsage}
+            disabled={!messsage || !email}
           >
             <IoSend />
             {loading ? "sending..." : "send"}

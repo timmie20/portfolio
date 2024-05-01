@@ -1,36 +1,10 @@
-import React, { useContext, useState } from "react";
-import github from "../assets/gitbud.svg";
-import insta from "../assets/insta.svg";
-import tiktok from "../assets/tiktok.svg";
-import { AppContext } from "../context/AppContext";
-import { useInView } from "react-intersection-observer";
-import { Link } from "react-router-dom";
-import ContactModal from "../modal/ContactModal";
-import Notification from "./Notification";
+import React from "react";
 import { Link as HashLink } from "react-scroll";
 
 const ContactBanner = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [notification, setNotification] = useState("");
-
-  const { setContactInView } = useContext(AppContext);
-
-  const { ref: contactSectionRef } = useInView({
-    threshold: 0.7,
-    onChange: (inView) => {
-      setContactInView(inView);
-    },
-  });
-
   return (
     <>
-      {notification !== "" && (
-        <Notification
-          notification={notification}
-          setNotification={setNotification}
-        />
-      )}
-      <section className="relative mt-32" id="contact" ref={contactSectionRef}>
+      <section className="relative mt-32">
         <div className="banner flex h-[621px]">
           <div className="first_cover "></div>
           <div className="third_cover "></div>

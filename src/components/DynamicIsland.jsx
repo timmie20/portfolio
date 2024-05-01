@@ -6,8 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const DynamicIsland = () => {
   const [showComponent, setShowComponent] = useState(false);
-  const { skillsInView, projectsInView, contactInView } =
-    useContext(AppContext);
+  const { skillsInView, projectsInView } = useContext(AppContext);
 
   useEffect(() => {
     const handleShowNav = () => {
@@ -70,17 +69,6 @@ const DynamicIsland = () => {
             >
               Projects
             </HashLink>
-
-            {/* <HashLink
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-170}
-              duration={500}
-              className={`island_link ${contactInView ? "active" : ""}`}
-            >
-              Contact
-            </HashLink> */}
           </motion.div>
         )}
       </AnimatePresence>
