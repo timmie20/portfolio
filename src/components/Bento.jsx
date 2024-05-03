@@ -93,7 +93,8 @@ const HeaderBlock = () => {
         </motion.div>
 
         <a
-          href="#"
+          href="files/oluwatimilehin-resume.pdf"
+          target="_blank"
           className="w-fit rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-zinc-50 shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
         >
           My Resume
@@ -282,7 +283,7 @@ const SendEmailBlock = () => {
             disabled={!messsage || !email}
           >
             <IoSend />
-            {loading ? "sending..." : "send"}
+            {loading ? "Sending..." : "send"}
           </button>
         </form>
       </Block>
