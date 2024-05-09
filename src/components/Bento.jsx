@@ -163,7 +163,7 @@ const SocialsBlock = () => {
         }}
       >
         <Link
-          to="https://www.instagram.com/codeturner_?igsh=eG55MWplYWw0eDd1&utm_source=qr "
+          to="https://www.instagram.com/techread_?igsh=eG55MWplYWw0eDd1&utm_source=qr"
           target="_blank"
           className="social_link"
         >
