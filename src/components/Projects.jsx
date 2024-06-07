@@ -12,7 +12,6 @@ const Projects = () => {
     threshold: 0.3,
     onChange: (inView) => {
       setProjectsInView(inView);
-      // console.log(inView);
     },
   });
 

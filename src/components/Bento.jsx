@@ -15,7 +15,7 @@ const Bento = () => {
   return (
     <>
       <main
-        className="container mx-auto min-h-screen px-4 py-12 text-zinc-50"
+        className="mx-auto min-h-screen max-w-[1280px] px-4 py-12 text-zinc-50"
         id="hero"
       >
         <motion.div
@@ -93,7 +93,8 @@ const HeaderBlock = () => {
         </motion.div>
 
         <a
-          href="files/oluwatimilehin-resume.pdf"
+          // href="files/oluwatimilehin-resume.pdf"
+          href="https://docs.google.com/document/d/1FuiwU6kg0ILcziYJ3365lgjMkqtMYzI4B_uwmCLX6xw/edit?usp=sharing"
           target="_blank"
           className="w-fit rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-zinc-50 shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
         >
@@ -178,13 +179,11 @@ const AboutBlock = () => {
   return (
     <Block className="col-span-12 text-xl leading-snug md:text-2xl lg:text-[28px]">
       <p className="flex flex-col">
-        I love brainstorming and turning my ideas into cash. It's pretty
-        awesome!{" "}
-        <span className="text-zinc-400">
-          I have 2years+ experience and build primarily with React, Tailwind
-          CSS, Framer Motion and Firebase, although I am not limited to them. I
-          also leverage both code & no-code tools to build highly scaleable and
-          interactive user interfaces.
+        <span className="text-zinc-300">
+          With a three-year background, I specialize in utilizing React,
+          Tailwind CSS, Framer Motion, and Firebase, while remaining adaptable
+          to other frameworks. My approach involves the strategic integration of
+          both code-based and no-code tools.
         </span>
         <span className="mt-3 text-base">
           Check out my TikTok page for helpful tech tips and web development
@@ -213,7 +212,6 @@ const SendEmailBlock = () => {
   const [notification, setNotification] = useState("");
 
   const templateParams = {
-    from_name: name,
     from_email: email,
     to_name: "Timilehin",
     message: messsage,
@@ -237,7 +235,6 @@ const SendEmailBlock = () => {
       setNotification("Unable to send email at this time, try again later !");
       console.log(error.text);
     } finally {
-      setEmail("");
       setMessage("");
     }
   };
