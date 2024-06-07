@@ -93,8 +93,7 @@ const HeaderBlock = () => {
         </motion.div>
 
         <a
-          // href="files/oluwatimilehin-resume.pdf"
-          href="https://docs.google.com/document/d/1FuiwU6kg0ILcziYJ3365lgjMkqtMYzI4B_uwmCLX6xw/edit?usp=sharing"
+          href="files/oluwatimilehin-resume.pdf"
           target="_blank"
           className="w-fit rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-zinc-50 shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
         >
