@@ -10,8 +10,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Notification from "./Notification";
+import { div } from "framer-motion/client";
 
-const Bento = () => {
+const Bento = ({ remove }) => {
   return (
     <>
       <main
@@ -24,7 +25,7 @@ const Bento = () => {
           transition={{ staggerChildren: 0.06 }}
           className="grid grid-flow-dense grid-cols-12 gap-4"
         >
-          <HeaderBlock />
+          <HeaderBlock remove={remove} />
           <SocialsBlock />
           <AboutBlock />
           <LocationBlock />
@@ -52,7 +53,7 @@ const Block = ({ className, ...props }) => {
   );
 };
 
-const HeaderBlock = () => {
+const HeaderBlock = ({ remove }) => {
   return (
     <Block className="col-span-12 row-span-2 md:col-span-6">
       <div className="flex items-center gap-3">
@@ -71,35 +72,45 @@ const HeaderBlock = () => {
         </span>
       </h1>
 
-      <div className="mt-10 flex items-center justify-between">
-        <motion.div
-          className="grid size-12 cursor-pointer place-content-center rounded-full bg-zinc-500 transition-colors duration-300 ease-in-out hover:bg-zinc-300 hover:text-zinc-700 md:size-14"
-          initial={{ scale: 0.3, x: 0 }}
-          animate={{
-            scale: 1,
-            x: [0, 100, 100, 0],
-          }}
-          transition={{ duration: 1.4, ease: "backInOut" }}
-        >
-          <HashLink
-            to="skills"
-            spy={true}
-            smooth={true}
-            offset={-170}
-            duration={400}
+      {!remove && (
+        <div className="mt-10 flex items-center justify-between">
+          <motion.div
+            className="grid size-12 cursor-pointer place-content-center rounded-full bg-zinc-500 transition-colors duration-300 ease-in-out hover:bg-zinc-300 hover:text-zinc-700 md:size-14"
+            initial={{ scale: 0.3, x: 0 }}
+            animate={{
+              scale: 1,
+              x: [0, 100, 100, 0],
+            }}
+            transition={{ duration: 1.4, ease: "backInOut" }}
           >
-            <FaAnglesDown />
-          </HashLink>
-        </motion.div>
+            <HashLink
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={-170}
+              duration={400}
+            >
+              <FaAnglesDown />
+            </HashLink>
+          </motion.div>
 
-        <a
-          href="files/Timilehin_olayinka_Resume.pdf"
-          target="_blank"
-          className="w-fit rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-zinc-50 shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
-        >
-          My Resume
-        </a>
-      </div>
+          <div onTouchCancel="flex items-cem">
+            <a
+              href="files/Timilehin_olayinka_Resume.pdf"
+              target="_blank"
+              className="w-fit rounded-sm bg-customOrange px-5 py-2 text-sm font-medium text-zinc-50 shadow-[3px_3px_0px_white] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+            >
+              My Resume
+            </a>
+          </div>
+        </div>
+      )}
+
+      {remove && (
+        <div className="mt-5">
+          <p>Student of yaba college of technology </p>
+        </div>
+      )}
     </Block>
   );
 };
